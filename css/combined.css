@@ -197,7 +197,7 @@ header.masthead {
   *background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.1)), url("../img/boston.jpg");
   *background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.1)), url("../img/acorn_street_small.jpg");
   *background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url("../img/acorn_street_small.jpg");
-  background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../img/boeing747-8.jpg");
+  background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../img/background.bmp");
   background-repeat: no-repeat;
   *background-attachment: scroll;
   background-attachment: fixed;
