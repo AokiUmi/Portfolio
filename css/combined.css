@@ -569,8 +569,10 @@ aside.clients img {
 }
 
 section#contact {
+  
+  background-image: url("../img/2.jpg");
+  opacity: 1;
   background-color: #212529;
-  background-image: url("../img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1140,11 +1142,11 @@ a:hover, a:focus, a:active {
 }
 
 .bg-primary {
-  background-color: #2988bc !important;
+  background-color: #5fa2c6 !important;
 }
 
 .text-primary {
-  color: #2988bc !important;
+  color: #5c9dc0!important;
 }
 
 .text-secondary {
