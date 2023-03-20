@@ -14,11 +14,12 @@ function draw() {
     canvas.width = contentWidth;
     canvas.height = contentWidth;
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.scale(canvas.width / 400, canvas.height / 400);
+
     context.fillStyle = "#316AB9";
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.strokeStyle = "#4F260B";
     context.fillStyle = "#4F260B";
+    context.scale(canvas.width / 400, canvas.height / 400);
     context.save();
     context.translate(20, 0);
     context.scale(0.9, 1);
