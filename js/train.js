@@ -625,8 +625,7 @@ slider = runcanvas.range;
 // WARNING: makeCheckbox adds a "check-" to the id of the checkboxes
 //
 // lines to uncomment to make checkboxes
-makeCheckbox("simple-track");
-makeCheckbox("arc-length").checked = true;
+
 //makeCheckbox("bspline");
 
 let simple = /** @type {HTMLCanvasElement} */ (
