@@ -27,11 +27,12 @@ import {
  * things are set up with an initial track
  */
 /** @type Array<number[]> */
+let presize = 600;
 let thePoints = [
   [150, 150],
-  [150, 550],
-  [550, 550],
-  [550, 150],
+  [150, 450],
+  [450, 450],
+  [450, 150],
 ];
 let derivative = [];
 let circle_point = [];
@@ -89,6 +90,13 @@ function distance(x1, y1, x2, y2) {
 }
 let sum_length = 0;
 
+function resize_points() {
+  for (let i of thePoints) {
+    i[0] = i[0] / presize * canvas.width;
+    i[1] = i[1] / presize * canvas.height;
+  }
+}
+
 function init() {
   circle_point = [];
   arc_length = [];
@@ -118,9 +126,11 @@ function draw(canvas, param) {
   if (contentWidth != 0) {
     canvas.width = contentWidth;
     canvas.height = canvas.width;
+
   }
 
-
+  if (canvas.width != presize)
+    resize_points();
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.fillStyle = "#2E8B57";
   context.fillRect(0, 0, canvas.width, canvas.height);
@@ -147,7 +157,7 @@ function draw(canvas, param) {
   else draw_parallel_rails(context);
   draw_train(context, param);
   last_length = sum_length;
-
+  presize = canvas.width;
   // now, the student should add code to draw the track and train
 }
 let smoke = [];
@@ -283,6 +293,7 @@ function draw_parallel_rails(context) {
   }
   let num = thePoints.length
   rail.push(num);
+
   let prex, prey, prestepx, prestepy;
   for (let u of rail) {
     let id0, id1;
@@ -349,6 +360,7 @@ function draw_parallel_rails(context) {
     context.closePath();
     context.stroke();
   }
+
 }
 
 function draw_simple_track(context) {
@@ -651,6 +663,7 @@ window.onresize = function () {
 content.onchange = function () {
   wrapDraw();
 }
+
 // helper function - set the slider to have max = # of control points
 function setNumPoints() {
   runcanvas.setupSlider(0, thePoints.length, 0.05);
