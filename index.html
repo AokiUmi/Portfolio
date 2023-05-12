@@ -1425,8 +1425,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 </div> -->
 
                 <body>
-                  <iframe title="finalproject" src="3d_project/final_project/final-grtown.html" width="880px"
-                    height="1000px" scrolling="no" frameborder="0" class="modal-body"></iframe>
+
                   <div id='final-project-div'>
                   </div>
 
@@ -1451,10 +1450,10 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   iframe.setAttribute('frameborder', '0');
 
                   const observer_final = new MutationObserver((mutationsList) => {
-                    for (const mutation of mutationsList) {
-                      if (mutation.attributeName === 'style') { // Check if the 'style' attribute was modified
-                        const styles_final = mutation.target.style;
-                        const wasHidden_final = styles.display === 'none';
+                    for (const mutation_final of mutationsList) {
+                      if (mutation_final.attributeName === 'style') { // Check if the 'style' attribute was modified
+                        const styles_final = mutation_final.target.style;
+                        const wasHidden_final = styles_final.display === 'none';
                         if (wasHidden_final) {
                           if (tmp.firstChild) tmp.removeChild(tmp.firstChild);
                         } else {
@@ -1464,7 +1463,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                     }
                   });
 
-                  observer.observe(modal, {
+                  observer_final.observe(modal_final, {
                     attributes: true
                   }); // Start observing changes to the modal's attributes
                 </script>
