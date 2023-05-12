@@ -1427,20 +1427,47 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 <body>
                   <iframe title="finalproject" src="3d_project/final_project/final-grtown.html" width="880px"
                     height="1000px" scrolling="no" frameborder="0" class="modal-body"></iframe>
+                  <div id='final-project-div'>
+                  </div>
 
                 </body>
-
-
-
-
-
 
                 <br>
 
                 <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                   <i class="fa fa-times"></i> Close
                 </a>
+                <script defer>
+                  const modal_final = document.querySelector(
+                    '#portfolioModal8'); // Replace 'your-modal-id' with the ID of your modal <div> element
 
+                  const tmp = document.querySelector('#final-project-div');
+                  const iframe = document.createElement('iframe');
+                  iframe.setAttribute('title', 'finalproject');
+                  iframe.setAttribute('src', '3d_project/final_project/final-grtown.html');
+                  iframe.setAttribute('width', '880px');
+                  iframe.setAttribute('height', '1000px');
+                  iframe.setAttribute('scrolling', 'no');
+                  iframe.setAttribute('frameborder', '0');
+
+                  const observer_final = new MutationObserver((mutationsList) => {
+                    for (const mutation of mutationsList) {
+                      if (mutation.attributeName === 'style') { // Check if the 'style' attribute was modified
+                        const styles_final = mutation.target.style;
+                        const wasHidden_final = styles.display === 'none';
+                        if (wasHidden_final) {
+                          if (tmp.firstChild) tmp.removeChild(tmp.firstChild);
+                        } else {
+                          tmp.appendChild(iframe);
+                        }
+                      }
+                    }
+                  });
+
+                  observer.observe(modal, {
+                    attributes: true
+                  }); // Start observing changes to the modal's attributes
+                </script>
               </div>
             </div>
           </div>

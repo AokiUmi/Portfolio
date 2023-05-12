@@ -85,4 +85,3 @@ highlight("TravelGuider-1");
 world.ui = new WorldUI(world);
 // now make it go!
 world.go();
-world.runbutton.checked = false;
