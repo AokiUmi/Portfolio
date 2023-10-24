@@ -572,7 +572,7 @@ section#contact {
   
   background: url("../img/2.jpg");
   opacity: 1;
-  background-color: #0c111f;
+  background-color: linear-gradient(120deg, #0c111f,#2a2a44) ;
   background-repeat: no-repeat;
   background-position: center;
 }
