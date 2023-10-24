@@ -570,9 +570,9 @@ aside.clients img {
 
 section#contact {
   
-  background-image: url("../img/2.jpg");
+  background: url("../img/2.jpg");
   opacity: 1;
-  background-color: #212529;
+  background-color: #0c111f;
   background-repeat: no-repeat;
   background-position: center;
 }
