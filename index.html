@@ -952,6 +952,12 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   more simple and easy-understanding.
 
                 </p>
+                <div class="image-row">
+                  <img src="/img/design project/vcs manage for specific code.png" alt="second design"
+                    class="img-fluid d-block mx-auto">
+                  <img src="/img/design project/task graph.png" alt="second design 2" class="img-fluid d-block mx-auto">
+
+                </div>
                 <h3>Final Prototype</h3>
                 <h4>Overview</h4>
                 <img src="/img/design project/Overview2.png" alt="final design1" class="img-fluid d-block mx-auto">
@@ -971,12 +977,55 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   there is a discussion issue related to this code and you can click the red block to access to the
                   discussion detailed page.
                 </p>
-                <div class="image-row">
-                  <img src="/img/design project/vcs manage for specific code.png" alt="second design"
-                    class="img-fluid d-block mx-auto">
-                  <img src="/img/design project/task graph.png" alt="second design 2" class="img-fluid d-block mx-auto">
+                <h4>Discussion Board Overview</h4>
+                <img src="/img/design project/Discussion Board Overview.png" alt="final design2"
+                  class="img-fluid d-block mx-auto">
 
-                </div>
+                <p class="lead">
+                  This is a new page that shows the discussion board, and it shows all the discussion issues
+                  related to the editor, you can also add an issue at this page by selecting the relative code lines.
+                </p>
+                <img src="/img/design project/Discussion Board issue-2.png" alt="final design3"
+                  class="img-fluid d-block mx-auto">
+                <p class="lead">
+                  This one is the detailed page where when you click one of the issues, you can see the detailed
+                  discussions, the original problems and replies, each one is bound to one of the code versions shown
+                  below. The code block on the right side is related to the real-time editor. However, it is not a
+                  real-time editor, you can click the code verison in the version list to see different code versions
+                  provided by different people related to this discussion, or add a new version and edit yourself. Every
+                  code version can only be edited by one person who generates it, and if you are not finishing your
+                  code, it will not be shown in the list. The original version is the code selected by the issue owner.
+                  And if other members have other ideas that want to help him, he can edit the code from any existing
+                  versions in the version list. To test different versions in the main editor, I design a button on the
+                  version list to select which version you want to be shown in the main real-time editor, and then you
+                  can test this version in your project. Only one code version will be shown in the main editor.
+
+                </p>
+                <p class="lead">
+                  In the above version 1, I design all the code versions to be flat, and if you want to edit based on
+                  others code version just click the Edit button and it will generate a new version for you to edit. So
+                  if 100 people are participating in this discussion and they all want to change the code, there will be
+                  100 new versions and they can edit separately.
+
+                </p>
+
+                <img src="/img/design project/Discussion Board issue.png" alt="final design3"
+                  class="img-fluid d-block mx-auto">
+                <p class="lead">
+                  n this version all the code versions are connected and can be shown by a version graph. When you try
+                  to edit the code and click the Edit button, the VCS system will generate a new version using a hash
+                  number as its commit tag, and this new version will be a node added on the version graph. Also when
+                  you do not click the upload button, others will not see your version in the list.
+
+                  When the discussion is done, the issue owner can close the discussion and select one of the code
+                  versions in the list to be shown in the main editor. And then this code area will be unlocked,
+                  allowing users to edit. This "lock" just means that other users in the real-time editor can not edit
+                  it, otherwise it would be conflicts.
+                </p>
+
+
+
+
                 <div class="lead mb-4">
                   <b>View my prototype in Figma: </b>
                   <a href="https://www.figma.com/file/OUKTVJN503MShhSN0dEGXX/Discussion-Board?type=design&mode=design&t=GiKV0yb4q72wSNSK-1"
