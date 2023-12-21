@@ -60,7 +60,7 @@
             <a class="nav-link js-scroll-trigger" href="#timeline">Education</a>
           </li>
 
-    
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#research">Research</a>
           </li>
@@ -218,7 +218,7 @@
             Education
           </a> -->
 
-        
+
           <a class="btn btn-light btn-xl ml-2 mr-2 mb-3 js-scroll-trigger about-btn" href="#research">
             Research
           </a>
@@ -311,9 +311,10 @@
 
                 </div>
                 <div class="timeline-body">
-                  <p class="lead">In Spring and Fall 2023, I'm an Undergraduate Special Student (non-degree) at University of
+                  <p class="lead">In Spring and Fall 2023, I'm an Undergraduate Special Student (non-degree) at
+                    University of
                     Wisconsin-Madison, majoring in Computer Science.</p>
-                    <p>GPA for last semester: 4.00/4.00</p>
+                  <p>GPA for last semester: 4.00/4.00</p>
                 </div>
               </div>
             </li>
@@ -324,8 +325,8 @@
   </section>
 
 
- 
-      <!-- Research -->
+
+  <!-- Research -->
   </section>
   <section class="content-section" id="research" style="background:#fff9f2;">
     <div class="container">
@@ -385,7 +386,7 @@
           </a>
         </div>
 
- 
+
 
       </div>
       <br><br><br>
@@ -553,8 +554,8 @@
     </div>
   </section>
 
-   <!-- Skills -->
-   <section class="content-section bg-primary text-white text-center" id="skills">
+  <!-- Skills -->
+  <section class="content-section bg-primary text-white text-center" id="skills">
     <div class="container">
       <div class="content-section-heading">
         <h2 class="mb-2">Skills</h2>
@@ -658,10 +659,10 @@
             <a data-toggle="modal" href="#portfolioModal4">animate video</a> made by my own.
           </p>
 
-        
+
         </div>
       </div>
-    </section>
+  </section>
   <!-- Papers -->
   <!-- <section class="content-section bg-primary text-white" id="papers">
     <div class="container">
@@ -871,15 +872,17 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
   </div>
   <style>
     .image-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
     .image-row img {
-        width: 50%; /* Adjust the width as needed */
-        margin: 5px;
+      width: 50%;
+      /* Adjust the width as needed */
+      margin: 5px;
     }
-</style>
+  </style>
   <!-- Design Project 1 -->
   <div class="portfolio-modal modal fade" id="portfolioModalDesign1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class=" modal-dialog">
@@ -897,44 +900,87 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 <img src="/img/design project/Overview.png" alt="real time editor" class="img-fluid d-block mx-auto">
                 <h3>Motivation</h3>
                 <p class="lead">
-                  In classroom environments, students are frequently organized into groups to support collaboration. This is
-                  typical in programming classes for small group projects, peer reviews, or discussions on coding problems.
-                  However, there are various criteria for grouping students, such as coding performance, code structure, or
-                  previous group interactions. We need to comprehend the interplay between these dynamics and the outcomes
+                  In classroom environments, students are frequently organized into groups to support collaboration.
+                  This is
+                  typical in programming classes for small group projects, peer reviews, or discussions on coding
+                  problems.
+                  However, there are various criteria for grouping students, such as coding performance, code structure,
+                  or
+                  previous group interactions. We need to comprehend the interplay between these dynamics and the
+                  outcomes
                   of the learning sessions. Additionally, we must explore how to support these groups to enhance the
                   effectiveness of their discussions, making them more meaningful and fulfilling for the students.
                 </p>
                 <h3>Problem Solving</h3>
                 <p class="lead">
-                  Through reading relevant papers about real time coding design, I learnt that task distribution and efficient discussion 
-                  are two key problems students may have during team working process. Comparing with traditional VCS system, students prefer
-                   to use real time editor to cooperate with others.
+                  Through reading relevant papers about real time coding design, I learnt that task distribution and
+                  efficient discussion
+                  are two key problems students may have during team working process. Comparing with traditional VCS
+                  system, students prefer
+                  to use real time editor to cooperate with others.
                 </p>
                 <p class="lead">
-                  My design focuses on two points: making task visualization and distribution more efficient and connecting discussion with the real time editor or the specific code.
+                  My design focuses on two points: making task visualization and distribution more efficient and
+                  connecting discussion with the real time editor or the specific code.
                   Here is my first draft.
                 </p>
                 <div class="image-row">
-                   <img src="/img/design project/code_annotation_design.png" alt="first design" class="img-fluid d-block mx-auto">
-                    <img src="/img/design project/compile and task mode.png" alt="first design 2" class="img-fluid d-block mx-auto">
-                 
+                  <img src="/img/design project/code_annotation_design.png" alt="first design"
+                    class="img-fluid d-block mx-auto">
+                  <img src="/img/design project/compile and task mode.png" alt="first design 2"
+                    class="img-fluid d-block mx-auto">
+
                 </div>
                 <p class="lead">
-                  My idea is using annotation attached to some lines of code block to connect comments with specific code. However if the source 
-                  code has been modified, this design will cause a lot of mess and if there are thousands of comments on this code file, how to 
+                  My idea is using annotation attached to some lines of code blocks to connect comments with specific
+                  code. However if the source
+                  code has been modified, this design will cause a lot of mess and if there are thousands of comments on
+                  this code file, how to
                   arrange such interface can be a big problem.
                 </p>
                 <p class="lead">
-                 So I improve my idea using a VCS manage system to solve this mess, using a VCS system to manage the discussion and code versions.
+                  So I improve my idea using a VCS manage system to solve this mess, using a VCS system to manage the
+                  discussion and code versions.
+                  And I make my task distribution idea more specifically.
+                </p>
+                <p class="lead">
+                  However, my sketches will hit scalability issue. imagine if this is a classroom setting where the
+                  instructor has the main codebase and they invite 100 students to participate
+                  in writing a specific function. This tiny interface can not manage such situation. After a long time
+                  of brainstorming and reading relevant materials, I finally come
+                  with the idea that can perfectly handle such problems and I beautify the whole interfaces to make it
+                  more simple and easy-understanding.
+
+                </p>
+                <h3>Final Prototype</h3>
+                <h4>Overview</h4>
+                <img src="/img/design project/Overview2.png" alt="final design1" class="img-fluid d-block mx-auto">
+                <p class="lead">
+                  To solve the problem that my previous idea could not afford too many people to edit and discuss the
+                  same code block, I decided to make the
+                  discussion board to be a new page instead of a chat box attached to the code. But the main editor is
+                  still a real-time editor that can allow
+                  multiple users to edit together.
+
+                </p>
+                <p class="lead">
+                  For this image, on the top is the main editor and you can select the codes and make it to be a
+                  discussion issue block, which means you have problems or something to chat with your teammates. so you
+                  lock this area and others can not edit it until this issue is solved. The red block on the editor
+                  means
+                  there is a discussion issue related to this code and you can click the red block to access to the
+                  discussion detailed page.
                 </p>
                 <div class="image-row">
-                  <img src="/img/design project/vcs manage for specific code.png" alt="second design" class="img-fluid d-block mx-auto">
-                   <img src="/img/design project/task graph.png" alt="second design 2" class="img-fluid d-block mx-auto">
-                
-               </div>
+                  <img src="/img/design project/vcs manage for specific code.png" alt="second design"
+                    class="img-fluid d-block mx-auto">
+                  <img src="/img/design project/task graph.png" alt="second design 2" class="img-fluid d-block mx-auto">
+
+                </div>
                 <div class="lead mb-4">
                   <b>View my prototype in Figma: </b>
-                  <a href="https://www.figma.com/file/OUKTVJN503MShhSN0dEGXX/Discussion-Board?type=design&mode=design&t=GiKV0yb4q72wSNSK-1" target="blank">Figma Prototype</a>
+                  <a href="https://www.figma.com/file/OUKTVJN503MShhSN0dEGXX/Discussion-Board?type=design&mode=design&t=GiKV0yb4q72wSNSK-1"
+                    target="blank">Figma Prototype</a>
                 </div>
                 <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                   <i class="fa fa-times"></i> Close Project
