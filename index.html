@@ -1992,13 +1992,13 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   // Function to open the portfolioModal_Special and close portfolioModal8
                   const openSpecialModal = () => {
                       $('#portfolioModal8').modal('hide'); // Close portfolioModal8
-                      $('#portfolioModal_Special').modal('show'); // Show portfolioModal_Special
+                      setTimeout(() => $('#portfolioModal_Special').modal('show'),500); // Show portfolioModal_Special
                   };
 
                   // Function to close the portfolioModal_Special and open portfolioModal8
                   const closeSpecialModal = () => {
                       $('#portfolioModal_Special').modal('hide'); // Close portfolioModal_Special
-                      $('#portfolioModal8').modal('show'); // Show portfolioModal8
+                      setTimeout(() =>$('#portfolioModal8').modal('show'),500); // Show portfolioModal8
                   };
                   // Call the function to open portfolioModal_Special when clicking the openNewLink
                   openNewLink.addEventListener('click', () => {
