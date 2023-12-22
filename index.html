@@ -1989,62 +1989,35 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   const modalSpecial = document.querySelector('#portfolioModal_Special');
                   const closeBtn = document.querySelector('#portfolioModal_Special .btn[data-dismiss="modal"]');
                   const closeElements = document.querySelectorAll('#portfolioModal_Special .close-modal');
-
-                  const handleOpenNewClick = () => {
-                      if (tmp.firstChild) {
-                          tmp.removeChild(tmp.firstChild);
-                      }
+                  // Function to open the portfolioModal_Special and close portfolioModal8
+                  const openSpecialModal = () => {
+                      originalModal.style.display = 'none'; // Hide the original modal
+                      specialModal.style.display = 'block'; // Show the portfolioModal_Special
                   };
 
-                  openNewLink.addEventListener('click', handleOpenNewClick);
-
-                  const isSpecialModalOpen = () => {
-                      return modalSpecial.classList.contains('show');
+                  // Function to close the portfolioModal_Special and open portfolioModal8
+                  const closeSpecialModal = () => {
+                      specialModal.style.display = 'none'; // Hide the portfolioModal_Special
+                      originalModal.style.display = 'block'; // Show the original modal
                   };
 
-                  const observerSpecial = new MutationObserver(() => {
-                      if (isSpecialModalOpen()) {
-                          if (tmp.firstChild) {
-                              tmp.removeChild(tmp.firstChild);
-                          }
-                      } else {
-                          // If modal is closed either by clicking close button, outside click, or 'close-modal' elements, show the iframe
-                          if (!tmp.contains(iframe)) {
-                              tmp.appendChild(iframe);
-                          }
-                      }
-                  });
-                  const originalModal = document.querySelector('#portfolioModal8');
-
-                  // Function to reset scroll behavior
-                  const resetScrollBehavior = () => {
-                
-                      originalModal.style.overflowY = 'auto';
-                    
-                  };
-
-                  observerSpecial.observe(modalSpecial, {
-                      attributes: true,
-                      attributeFilter: ['class']
+                  // Call the function to open portfolioModal_Special when clicking the openNewLink
+                  openNewLink.addEventListener('click', () => {
+                      openSpecialModal();
+                      // Other actions to open portfolioModal_Special
                   });
 
+                  // Call the function to close portfolioModal_Special and open portfolioModal8 when clicking the close button
                   closeBtn.addEventListener('click', () => {
-                      // Trigger iframe appearance when the modal close button is clicked
-                      if (!tmp.contains(iframe)) {
-                          tmp.appendChild(iframe);
-                      }
-                      resetScrollBehavior();
-                  });
+                      // Other actions when closing the modal...
 
-                  closeElements.forEach(element => {
-                      element.addEventListener('click', () => {
-                          // Trigger iframe appearance when 'close-modal' elements inside the modal are clicked
-                          if (!tmp.contains(iframe)) {
-                              tmp.appendChild(iframe);
-                          }
-                          resetScrollBehavior();
-                      });
+                      closeSpecialModal();
                   });
+                  closeElements.forEach(element => {
+                    element.addEventListener('click', () => {
+                      closeSpecialModal();                  
+                      });
+                });
                 </script>
               </div>
             </div>
