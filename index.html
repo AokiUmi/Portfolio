@@ -2004,19 +2004,22 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
 
                   // Observer to close the iframe if the 'portfolioModal_Special' is open
                   const observerSpecial = new MutationObserver(() => {
-                      if (isSpecialModalOpen()) {
-                          if (tmp.firstChild) {
-                              tmp.removeChild(tmp.firstChild);
-                          } else {
-                          tmp.appendChild(iframe);
+                    if (isSpecialModalOpen()) {
+                        if (tmp.firstChild) {
+                            tmp.removeChild(tmp.firstChild);
                         }
-                      }
-                  });
+                    } else {
+                        // If modal is closed, show the iframe
+                        if (!tmp.contains(iframe)) {
+                            tmp.appendChild(iframe);
+                        }
+                    }
+                });
 
-                  observerSpecial.observe(modalSpecial, {
-                      attributes: true,
-                      attributeFilter: ['style']
-                  });
+                observerSpecial.observe(modalSpecial, {
+                  attributes: true,
+                  attributeFilter: ['class']
+              });
                 </script>
               </div>
             </div>
