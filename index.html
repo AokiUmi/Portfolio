@@ -1099,6 +1099,18 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                     show more to get more information. Then clicking save to add them into your basket. In the basket page, you can also choose to 
                     finally adopt them or unselect them.
                   </p>
+
+                  <video id="demo" width="95%" height="54%" controls>
+                    <source src="/video/chat_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <p class="lead">
+                    Here is a simple chatroom design, you can register your own account to login into the chatrooms, you can post your chat and delete 
+                    what you post when you are logged in. However, when you visit the chatroom as a guest, you can only view the chat messages while you 
+                    can not post or delete any post. 
+                  </p>
+
+
                   <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                     <i class="fa fa-times"></i> Close Project
                   </a>
@@ -1107,7 +1119,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   <script defer>
                     const modalDesign = document.querySelector(
                       '#portfolioDesign2'); // Replace 'your-modal-id' with the ID of your modal <div> element
-                    const videoDesign = modal.querySelector('#demo'); // Get the video element inside the modal
+                    const videoDesign = modalDesign.querySelector('#demo'); // Get the video element inside the modal
   
                     const observerDesign = new MutationObserver((mutationsList) => {
                       for (const mutation of mutationsList) {
