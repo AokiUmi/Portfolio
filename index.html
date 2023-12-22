@@ -1991,16 +1991,15 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   const closeElements = document.querySelectorAll('#portfolioModal_Special .close-modal');
                   // Function to open the portfolioModal_Special and close portfolioModal8
                   const openSpecialModal = () => {
-                      originalModal.style.display = 'none'; // Hide the original modal
-                      specialModal.style.display = 'block'; // Show the portfolioModal_Special
+                      $('#portfolioModal8').modal('hide'); // Close portfolioModal8
+                      $('#portfolioModal_Special').modal('show'); // Show portfolioModal_Special
                   };
 
                   // Function to close the portfolioModal_Special and open portfolioModal8
                   const closeSpecialModal = () => {
-                      specialModal.style.display = 'none'; // Hide the portfolioModal_Special
-                      originalModal.style.display = 'block'; // Show the original modal
+                      $('#portfolioModal_Special').modal('hide'); // Close portfolioModal_Special
+                      $('#portfolioModal8').modal('show'); // Show portfolioModal8
                   };
-
                   // Call the function to open portfolioModal_Special when clicking the openNewLink
                   openNewLink.addEventListener('click', () => {
                       openSpecialModal();
