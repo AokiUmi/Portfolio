@@ -393,11 +393,25 @@
               <span class="caption-content">
                 <h4>Simple Website Design</h4>
                 <p class="mb-0">
-                  Some Website Design I implemented in UX design courses.
+                  Some Website Designs I implemented in UX design courses.
                 </p>
               </span>
             </span>
             <img class="img-fluid portfolio-img" src="/img/design project/website design/website overview.png" alt="">
+          </a>
+        </div>
+
+        <div class="col-lg-5">
+          <a class="portfolio-item" data-toggle="modal" href="#portfolioModalDesign3">
+            <span class="caption">
+              <span class="caption-content">
+                <h4>Simple App Design</h4>
+                <p class="mb-0">
+                  Some App Designs I implemented in UX design courses.
+                </p>
+              </span>
+            </span>
+            <img class="img-fluid portfolio-img" src="/img/design project/App design/overview.png" alt="">
           </a>
         </div>
 
@@ -1148,6 +1162,73 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
         </div>
       </div>
     </div>
+
+        <!-- website design -->
+        <div class="portfolio-modal modal fade" id="portfolioModalDesign3" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class=" modal-dialog">
+            <div class="modal-content">
+              <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                  <div class="rl"></div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 mx-auto">
+                    <div class="modal-body" id="modal">
+                      <h2>Simple Apps Design</h2>
+                      <h4>University of Wisconsin-Madison, Building User Interfaces (CS571)</h4>
+                      <img src="/img/design project/App design/overview.png" alt="app design" class="img-fluid d-block mx-auto">
+                      <p class="lead">
+                        Here are some of my courework related to simple app design, using React Native to construct a dynamic app.
+                      </p>
+                      <video id="demo" width="20%" height="54%" controls>
+                        <source src="/video/Chatroom App.m4v" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <p class="lead">
+                        Here is my first app design work using React Native, Display a simple app showing some snacks and their relevant information. 
+                        You can add numbers to calculate your order.
+                      </p>
+                      
+    
+    
+    
+                      <script defer>
+                        const modalDesign2 = document.querySelector('#portfolioModalDesign3'); // Replace 'your-modal-id' with the ID of your modal <div> element
+                        const videoDesign2 = modalDesign2.querySelectorAll('#demo'); // Get the video element inside the modal
+      
+                        const observerDesign2 = new MutationObserver((mutationsList) => {
+                          for (const mutation of mutationsList) {
+                            if (mutation.attributeName === 'style') { // Check if the 'style' attribute was modified
+                              const styles = mutation.target.style;
+                              const wasHidden = styles.display === 'none';
+                              if (wasHidden) {
+                                videoDesign2.forEach(video => video.pause());  // Pause the video if the modal is now hidden
+                              }
+                            }
+                          }
+                        });
+      
+                        observerDesign2.observe(modalDesign2, {
+                          attributes: true
+                        }); // Start observing changes to the modal's attributes
+                      </script>
+    
+    
+    
+                    <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
+                      <i class="fa fa-times"></i> Close Project
+                    </a>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
 
   <!-- 1. Chrome Dino -->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog">
