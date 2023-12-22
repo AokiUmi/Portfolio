@@ -1884,7 +1884,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 <img src="/img/cg details/11.PNG" alt="" class="img-fluid d-block mx-auto">
                 <img src="/img/cg details/12.PNG" alt="" class="img-fluid d-block mx-auto">
                 <img src="/img/cg details/13.PNG" alt="" class="img-fluid d-block mx-auto">
-                
+
               <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                 <i class="fa fa-times"></i> Close Project
               </a>
@@ -1966,7 +1966,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   iframe.setAttribute('height', '1000px');
                   iframe.setAttribute('scrolling', 'no');
                   iframe.setAttribute('frameborder', '0');
-
+                  const detailedPageLink = document.querySelector('a[data-toggle="modal"][href="#portfolioModal_Special"]');    
                   const observer_final = new MutationObserver((mutationsList) => {
                     for (const mutation_final of mutationsList) {
                       if (mutation_final.attributeName === 'style') { // Check if the 'style' attribute was modified
@@ -1980,7 +1980,15 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                       }
                     }
                   });
+                  const handleDetailedPageClick = () => {
+                  // Check if the iframe exists in the tmp container and remove it if it does
+                  if (tmp.firstChild) {
+                      tmp.removeChild(tmp.firstChild);
+                  }
+                 };
 
+                // Add a click event listener to the Detailed Page link
+                detailedPageLink.addEventListener('click', handleDetailedPageClick);
                   observer_final.observe(modal_final, {
                     attributes: true
                   }); // Start observing changes to the modal's attributes
