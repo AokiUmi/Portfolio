@@ -1898,7 +1898,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
     </div>
   </div>
 
-  <!-- 8. js Animation -->
+  <!-- 8. CG project -->
   <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
     <div class=" modal-dialog">
       <div class="modal-content">
@@ -2014,6 +2014,13 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                           }
                       }
                   });
+                  const originalModal = document.querySelector('#portfolioModal8');
+
+                  // Function to reset scroll behavior
+                  const resetScrollBehavior = () => {
+                      originalModal.style.overflowY = 'auto';
+                      originalModal.style.overflowX = 'hidden';
+                  };
 
                   observerSpecial.observe(modalSpecial, {
                       attributes: true,
@@ -2025,6 +2032,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                       if (!tmp.contains(iframe)) {
                           tmp.appendChild(iframe);
                       }
+                      resetScrollBehavior();
                   });
 
                   closeElements.forEach(element => {
@@ -2033,6 +2041,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                           if (!tmp.contains(iframe)) {
                               tmp.appendChild(iframe);
                           }
+                          resetScrollBehavior();
                       });
                   });
                 </script>
