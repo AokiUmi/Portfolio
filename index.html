@@ -1936,7 +1936,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 </p>
                 <p class="lead">
                   If you are interested in my process of making such huge theme, you can go to the  
-                  <a data-toggle="modal" href="#portfolioModal_Special">Detailed Page</a>
+                  <a id="openNew" data-toggle="modal" href="#portfolioModal_Special">Detailed Page</a>
                 </p>
                 <!-- <div id="div1">
                   <script src="3d_project/final_project/final-grtown.js " type="module"></script>
@@ -1966,7 +1966,7 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                   iframe.setAttribute('height', '1000px');
                   iframe.setAttribute('scrolling', 'no');
                   iframe.setAttribute('frameborder', '0');
-                  const detailedPageLink = document.querySelector('a[data-toggle="modal"][href="#portfolioModal_Special"]');    
+                 
                   const observer_final = new MutationObserver((mutationsList) => {
                     for (const mutation_final of mutationsList) {
                       if (mutation_final.attributeName === 'style') { // Check if the 'style' attribute was modified
@@ -1980,18 +1980,43 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                       }
                     }
                   });
-                  const handleDetailedPageClick = () => {
-                  // Check if the iframe exists in the tmp container and remove it if it does
-                  if (tmp.firstChild) {
-                      tmp.removeChild(tmp.firstChild);
-                  }
-                 };
-
-                // Add a click event listener to the Detailed Page link
-                detailedPageLink.addEventListener('click', handleDetailedPageClick);
+              
                   observer_final.observe(modal_final, {
                     attributes: true
                   }); // Start observing changes to the modal's attributes
+
+                  const detailedPageLink = document.querySelector('#openNew');
+                  const modalSpecial = document.querySelector('#portfolioModal_Special');
+
+                  const handleDetailedPageClick = () => {
+                      if (tmp.firstChild) {
+                          tmp.removeChild(tmp.firstChild);
+                      }
+                  };
+
+                  detailedPageLink.addEventListener('click', handleDetailedPageClick);
+
+                  // Function to check if the modal with ID 'portfolioModal_Special' is open
+                  const isSpecialModalOpen = () => {
+                      const modalStyle = window.getComputedStyle(modalSpecial);
+                      return modalStyle.display === 'block';
+                  };
+
+                  // Observer to close the iframe if the 'portfolioModal_Special' is open
+                  const observerSpecial = new MutationObserver(() => {
+                      if (isSpecialModalOpen()) {
+                          if (tmp.firstChild) {
+                              tmp.removeChild(tmp.firstChild);
+                          } else {
+                          tmp.appendChild(iframe);
+                        }
+                      }
+                  });
+
+                  observerSpecial.observe(modalSpecial, {
+                      attributes: true,
+                      attributeFilter: ['style']
+                  });
                 </script>
               </div>
             </div>
