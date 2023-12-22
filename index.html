@@ -1985,41 +1985,56 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                     attributes: true
                   }); // Start observing changes to the modal's attributes
 
-                  const detailedPageLink = document.querySelector('#openNew');
+                  const openNewLink = document.querySelector('#openNew');
                   const modalSpecial = document.querySelector('#portfolioModal_Special');
+                  const closeBtn = document.querySelector('#portfolioModal_Special .btn[data-dismiss="modal"]');
+                  const closeElements = document.querySelectorAll('#portfolioModal_Special .close-modal');
 
-                  const handleDetailedPageClick = () => {
+                  const handleOpenNewClick = () => {
                       if (tmp.firstChild) {
                           tmp.removeChild(tmp.firstChild);
                       }
                   };
 
-                  detailedPageLink.addEventListener('click', handleDetailedPageClick);
+                  openNewLink.addEventListener('click', handleOpenNewClick);
 
-                  // Function to check if the modal with ID 'portfolioModal_Special' is open
                   const isSpecialModalOpen = () => {
-                      const modalStyle = window.getComputedStyle(modalSpecial);
-                      return modalStyle.display === 'block';
+                      return modalSpecial.classList.contains('show');
                   };
 
-                  // Observer to close the iframe if the 'portfolioModal_Special' is open
                   const observerSpecial = new MutationObserver(() => {
-                    if (isSpecialModalOpen()) {
-                        if (tmp.firstChild) {
-                            tmp.removeChild(tmp.firstChild);
-                        }
-                    } else {
-                        // If modal is closed, show the iframe
-                        if (!tmp.contains(iframe)) {
-                            tmp.appendChild(iframe);
-                        }
-                    }
-                });
+                      if (isSpecialModalOpen()) {
+                          if (tmp.firstChild) {
+                              tmp.removeChild(tmp.firstChild);
+                          }
+                      } else {
+                          // If modal is closed either by clicking close button, outside click, or 'close-modal' elements, show the iframe
+                          if (!tmp.contains(iframe)) {
+                              tmp.appendChild(iframe);
+                          }
+                      }
+                  });
 
-                observerSpecial.observe(modalSpecial, {
-                  attributes: true,
-                  attributeFilter: ['class']
-              });
+                  observerSpecial.observe(modalSpecial, {
+                      attributes: true,
+                      attributeFilter: ['class']
+                  });
+
+                  closeBtn.addEventListener('click', () => {
+                      // Trigger iframe appearance when the modal close button is clicked
+                      if (!tmp.contains(iframe)) {
+                          tmp.appendChild(iframe);
+                      }
+                  });
+
+                  closeElements.forEach(element => {
+                      element.addEventListener('click', () => {
+                          // Trigger iframe appearance when 'close-modal' elements inside the modal are clicked
+                          if (!tmp.contains(iframe)) {
+                              tmp.appendChild(iframe);
+                          }
+                      });
+                  });
                 </script>
               </div>
             </div>
