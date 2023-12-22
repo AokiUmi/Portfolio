@@ -1082,15 +1082,49 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                 <div class="modal-body" id="modal">
                   <h2>Simple Website Design</h2>
                   <h4>University of Wisconsin-Madison, Building User Interfaces (CS571)</h4>
-                  <img src="/img/design project/website design/badger buddies.png" alt="motion generation" class="img-fluid d-block mx-auto">
+                  <img src="/img/design project/website design/website overview.png" alt="website design" class="img-fluid d-block mx-auto">
                   <p class="lead">
                     Here are some of my courework related to simple website design, using React to construct a dynamic website.
                   </p>
-           
-                
+                  <img src="/img/design project/website design/bakery.png" alt="bakery website" class="img-fluid d-block mx-auto">
+                  <p class="lead">
+                    Here is my first website design work using React, Display a simple website showing some snacks and their relevant information.
+                  </p>
+                  <video id="demo" width="95%" height="54%" controls>
+                    <source src="/video/buds_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <p class="lead">
+                    Here is my first dynamic webstie design, displaying a simple cat adoption website, you can choose buds interest you and click 
+                    show more to get more information. Then clicking save to add them into your basket. In the basket page, you can also choose to 
+                    finally adopt them or unselect them.
+                  </p>
                   <a class="btn btn-dark btn-l" data-dismiss="modal" href="#">
                     <i class="fa fa-times"></i> Close Project
                   </a>
+
+
+                  <script defer>
+                    const modalDesign = document.querySelector(
+                      '#portfolioDesign2'); // Replace 'your-modal-id' with the ID of your modal <div> element
+                    const videoDesign = modal.querySelector('#demo'); // Get the video element inside the modal
+  
+                    const observerDesign = new MutationObserver((mutationsList) => {
+                      for (const mutation of mutationsList) {
+                        if (mutation.attributeName === 'style') { // Check if the 'style' attribute was modified
+                          const styles = mutation.target.style;
+                          const wasHidden = styles.display === 'none';
+                          if (wasHidden) {
+                            videoDesign.pause(); // Pause the video if the modal is now hidden
+                          }
+                        }
+                      }
+                    });
+  
+                    observerDesign.observe(modalDesign, {
+                      attributes: true
+                    }); // Start observing changes to the modal's attributes
+                  </script>
   
                 </div>
               </div>
