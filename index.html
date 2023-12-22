@@ -2001,10 +2001,10 @@ Identification and Initialization Analysis</h5></a> (contributor, &sect;2)
                       setTimeout(() =>$('#portfolioModal8').modal('show'),500); // Show portfolioModal8
                   };
                   // Call the function to open portfolioModal_Special when clicking the openNewLink
-                  openNewLink.addEventListener('click', () => {
+                  openNewLink.onclick= () => {
                       openSpecialModal();
                       // Other actions to open portfolioModal_Special
-                  });
+                  };
 
                   // Call the function to close portfolioModal_Special and open portfolioModal8 when clicking the close button
                   closeBtn.addEventListener('click', () => {
