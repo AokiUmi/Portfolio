@@ -44,11 +44,11 @@ p {
 }
 
 a {
-  color: #fcbc1d;
+  color: #ffad33;
 }
 
 a:hover {
-  color: #fbab25;
+  color: #ff8d00;
   *text-decoration: none;
 }
 
